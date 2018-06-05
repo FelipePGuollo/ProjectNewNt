@@ -3,7 +3,8 @@
 <event type="login" name="SlotLogin" script="slot.lua"/>
 <event type="preparedeath" name="PetDeath" script="pet_creaturescript.lua" />
 <event type="kill" name="PetKill" script="pet_creaturescript.lua" />
-<event type="kill" name="AutoLoot" script="autoloot.lua" />
+<event type="kill" name="AutoLoot" script="autoloot.lua" /> 
+<event type="kill" name="AutoPetLoot" script="autopetloot.lua" />
 <event type="think" name="PetTeleport" script="pet_creaturescript.lua" />
 <event type="think" name="curar" script="petheal.lua" />
 <event type="healthchange" name="DemonLostHP" script="conditionsnew.lua" />

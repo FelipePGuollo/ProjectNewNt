@@ -59,7 +59,8 @@ local events = {
 	'DemonLostHP',
 	'BlackoutSpell',
 	'RedHealIgn',
-	'AutoLoot'
+	'AutoLoot',
+	'AutoPetLoot'
 }
  
 local function onMovementRemoveProtection(cid, oldPosition, time)

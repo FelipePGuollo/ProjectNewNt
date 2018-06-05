@@ -2,7 +2,7 @@
 <actions>
 
 <action fromaid="15150" toaid="15151" script="ctf.lua" />
-
+		<action itemid="26377" script="loot bag.lua"/>
 <!-- Arena Pvp -->
 
     <!--<action actionid="61225" script="Novos/citywar.lua"/>-->

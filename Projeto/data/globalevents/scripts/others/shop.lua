@@ -20,6 +20,7 @@ function onThink(interval, lastExecution)
 												local parcel = inbox:addItem(2596, 1)
 				local packagename = ''..item_count..'x '.. item_name ..' package.'
 										parcel:setAttribute(ITEM_ATTRIBUTE_NAME, packagename)
+															player:getInbox():addItem(item_id, item_count, INDEX_WHEREEVER, FLAG_NOLIMIT)
 					while i ~= 1 do
 										parcel:addItem(item_id, item_count, INDEX_WHEREEVER, FLAG_NOLIMIT)
 					i = i + 1
