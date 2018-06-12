@@ -8,6 +8,7 @@ local function scanContainer(cid, position)
     if not corpse then
         return
     end
+	
 
     if corpse:getType():isCorpse() and corpse:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == cid then
 						local idpetsave = 0
@@ -16,7 +17,6 @@ local function scanContainer(cid, position)
             if containerItem then
                 for i = AUTOPETLOOT_STORAGE_START, AUTOPETLOOT_STORAGE_END do
                     if player:getStorageValue(i) == containerItem:getId() then
-					player:teleportTo(position, true)
 					local countpetsave = containerItem:getCount()
 					local idpetsave = containerItem:getId()
 					if idpetsave == 2148 then
@@ -37,15 +37,13 @@ local function scanContainer(cid, position)
 					containerItem:remove()
 					if queryPet ~= false then
 					repeat
-					player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'id , '..idpetsave..' preco ' ..countpetsave..' id'..playerpetid)
-					player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'petupdate')	
+					position:sendMagicEffect(57, player)	
 	db.asyncQuery('UPDATE `pet_loot` SET `player_id`= player_id ,`pet_count`= `pet_count` + '..countpetsave..' WHERE `player_id` = ' .. playerpetid .. ' and `id` = '.. idpet .. ' LIMIT 1;')		
 					until not result.next(queryPet)
 					result.free(queryPet)
 					else
-					player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'id , '..idpetsave..' preco ' ..countpetsave..' id'..playerpetid)
 					db.asyncQuery('INSERT INTO `pet_loot`(`player_id`, `pet_itemid`, `pet_count`) VALUES ('..playerpetid..','..idpetsave..','..countpetsave..')')
-					player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'petadd')
+					position:sendMagicEffect(57, player)
 								end
                     end
 						end
@@ -61,6 +59,25 @@ playerpetid = player:getGuid()
         return true
     end
 
+						
+	local summon = player:getSummons()
+		if not summon[1] then
+				return true
+			end
+			
+			if player:getStorageValue(94433) >= 300 then
+			summon[1]:say("Need reposit",TALKTYPE_ORANGE_1,true,player)
+			return
+			end
+			
+	local posback = summon[1]:getPosition()
+	local posgo = target:getPosition()
+					player:setStorageValue(94433, player:getStorageValue(94433)+1)
+					summon[1]:teleportTo(posgo, true)
+					summon[1]:say("Taked",TALKTYPE_ORANGE_1,true,player,posgo)
+					addEvent(function()
+					summon[1]:teleportTo(posback, true)
+					end, 300)
     addEvent(scanContainer, 100, player:getId(), target:getPosition())
     return true
 end

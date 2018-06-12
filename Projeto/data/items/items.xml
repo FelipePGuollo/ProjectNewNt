@@ -23115,7 +23115,7 @@
 		<attribute key="containerSize" value="30" />
 	</item>
 		<item id="26377" name="Loot Bag">
-		<attribute key="containerSize" value="100" />
+		<attribute key="containerSize" value="30" />
 	</item>
 	<item id="14405" name="the market" />
 	<item fromid="14406" toid="14425" article="a" name="hive structure" />

@@ -15,6 +15,15 @@ function onSay(player, words, param)
 
         local itemName = tonumber(split[2]) and itemType:getName() or item
         local size = 0
+		
+			for x = AUTOPETLOOT_STORAGE_START, AUTOPETLOOT_STORAGE_END do	
+		    local storage = player:getStorageValue(x)
+			if storage == itemType:getId() then
+			player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "The Item " ..itemName .." is on Auto PET Loot List.")
+			return
+			end
+			end
+			
         for i = AUTOLOOT_STORAGE_START, AUTOLOOT_STORAGE_END do
             local storage = player:getStorageValue(i)
             if size == AUTO_LOOT_MAX_ITEMS then

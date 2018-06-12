@@ -367,7 +367,6 @@ function Player.summonPet(self, position)
         pet:setMaxHealth(maxHealth)
         pet:addHealth(maxHealth - pet:getHealth() - self:getPetLostHealth() )
         self:setPetUid( pet:getId() )
-        pet:setSkull(SKULL_GREEN)
         pet:changeSpeed(PETS.CONFIG.sameSpeed and (self:getBaseSpeed() - pet:getBaseSpeed()) or 0)
 
         for _, eventName in pairs({"PetDeath", "PetKill"}) do

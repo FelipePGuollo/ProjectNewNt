@@ -17,15 +17,13 @@ local type3 = {
 ["4"] = {price="3", name="Premium Days", itemid=26382, count=30, pa=true, mount= false}}
 
 		function getidaccountshop(accid)
-				local accountName = db.storeQuery("SELECT `account_id` FROM `players` WHERE `name` = '" .. accountnameshop .. "' LIMIT 1;")
-				accidplayershop = result.getDataInt(accountName, "account_id")
-				local accountPoints = db.storeQuery("SELECT `premium_points` FROM `accounts` WHERE `id` = '" .. accidplayershop .. "' LIMIT 1;")
+				local accountPoints = db.storeQuery("SELECT `premium_points` FROM `accounts` WHERE `id` = '" .. accountnameshop .. "' LIMIT 1;")
 				pointsplayershop = result.getDataInt(accountPoints, "premium_points")				
 				return accid
 		end
 		
 	function onSay(player, words, param)
-	accountnameshop = getCreatureName(player)
+	accountnameshop = player:getAccountId()
 	getidaccountshop(accid)
 	local split = param:split(",")
 	if split[1] == nil or split [2] == nil then
@@ -36,7 +34,7 @@ local type3 = {
 			for i,n in pairs(type1) do
 		if split[2] == i and pointsplayershop >= n.price then
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'id , '..i..' preco ' ..n.price)
-		db.asyncQuery("UPDATE `accounts` SET `premium_points` = `premium_points` - ".. n.price .." WHERE id = " .. accidplayershop .. "  LIMIT 1;")
+		db.asyncQuery("UPDATE `accounts` SET `premium_points` = `premium_points` - ".. n.price .." WHERE id = " .. accountnameshop .. "  LIMIT 1;")
 																				player:sendExtendedOpcode(52, pointsplayershop)	
 			end
 		end

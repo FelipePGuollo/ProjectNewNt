@@ -111,4 +111,6 @@
 <talkaction words="!autoloot" separator=" " script="autoloot/autoloot.lua" />
 <talkaction words="!petloot" separator=" " script="autoloot/autolootpet.lua" />
 <talkaction words="!petdeposit" script="pet/deposit.lua" />
+<talkaction words="!teste" script="teste.lua" />
+<talkaction words="!check" separator=" " script="playerexist.lua" />
 </talkactions>

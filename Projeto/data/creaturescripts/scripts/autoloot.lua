@@ -9,17 +9,8 @@ local function scanContainer(cid, position)
         return
     end
 
-    if corpse:getType():isCorpse() and corpse:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER) == cid then
-        for i = corpse:getSize() - 1, 0, -1 do
-            local containerItem = corpse:getItem(i)
-            if containerItem then
-                for i = AUTOLOOT_STORAGE_START, AUTOLOOT_STORAGE_END do
-                    if player:getStorageValue(i) == containerItem:getId() then
-                        containerItem:moveTo(player)
-                    end
-                end
-            end
-        end
+    if corpse:getType():isCorpse() then
+		corpse:setActionId(49000)
     end
 end
 

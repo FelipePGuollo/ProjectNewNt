@@ -18,7 +18,7 @@ premiumDepotLimit = 10000
 depotBoxes = 17
 
 storeImagesUrl = "http://127.0.0.1"
-storeCoinsPacketSize = 5200
+storeCoinsPacketSize = 25
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit

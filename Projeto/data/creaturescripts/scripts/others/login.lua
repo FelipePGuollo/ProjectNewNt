@@ -52,7 +52,6 @@ local events = {
     'DeathCounter',
     'KillCounter',
     'bless1',
-	'PetDeath',
     'PetOwnerLogin',
     'PetOwnerDeath',
 	'ExtendedOpcode',
@@ -60,7 +59,8 @@ local events = {
 	'BlackoutSpell',
 	'RedHealIgn',
 	'AutoLoot',
-	'AutoPetLoot'
+	'AutoPetLoot',
+	'Pet'
 }
  
 local function onMovementRemoveProtection(cid, oldPosition, time)

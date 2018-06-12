@@ -38,14 +38,20 @@
 										player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Error.')
 						return
 						end
-				local name = getCreatureName(player)
-				local namelower = string.lower(name)
+				local namelower = string.lower(player:getName())
 				local paramet = tonumber(splittransfer[2])
 				paramettarget = tonumber(splittransfer[2])
+				
+										if not playerExists(splittransfer[1]) then
+						player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+						return
+						end
+						
 				getidaccounttransfer(name)
 				gettotalpoints(player)
 				getidtarget(player)
-						if splittransfer[1] == name or splittransfer[1] == namelower then
+						
+						if splittransfer[1] == player:getName() or splittransfer[1] == namelower then
 										player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Error.')
 						return
 						end

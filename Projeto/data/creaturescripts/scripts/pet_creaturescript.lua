@@ -22,7 +22,7 @@ function onKill(creature, target)
 end
 
 function onThink(creature, interval)
-    local maxDistance = 7
+    local maxDistance = 9
     local owner = creature:getMaster()
 
     local petPosition = creature:getPosition()
@@ -30,13 +30,11 @@ function onThink(creature, interval)
 
     local tile = owner:getTile()
 
-    if tile:hasFlag(TILESTATE_PROTECTIONZONE) then
-
+    if tile:hasFlag(TILESTATE_PROTECTIONZONE) and (petPosition.z ~= ownerPosition.z or ownerPosition:getDistance(petPosition) >= maxDistance) then
+            creature:teleportTo(ownerPosition, true)
     else
         if petPosition.z ~= ownerPosition.z or ownerPosition:getDistance(petPosition) >= maxDistance then
-            petPosition:sendMagicEffect(CONST_ME_TELEPORT)
-            creature:teleportTo(ownerPosition)
-            creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+            creature:teleportTo(ownerPosition, true)
         end
 
     end
