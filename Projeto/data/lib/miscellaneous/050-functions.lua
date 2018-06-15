@@ -13,6 +13,19 @@ function getAccountNumberByPlayerName(name)
 	return 0
 end
 
+function isWalkable(position, cid)
+position.stackpos = 0
+local tilewalkable = Tile(position)
+if getTileThingByPos(position).uid ~= 0 then
+	local tile = getTileInfo(position)
+	if tile.protection == false and tile.house == false and getTopCreature(position).uid == 0 and tilewalkable:queryAdd(cid, position) == RETURNVALUE_NOERROR then
+		return true
+	end
+end
+return false
+end
+
+
 function getMoneyCount(string)
 	local b, e = string:find("%d+")
 	local money = b and e and tonumber(string:sub(b, e)) or -1

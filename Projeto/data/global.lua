@@ -217,7 +217,7 @@ end
 -- AutoLoot config end
 
    -- AutoLoot config
-    AUTOPET_LOOT_MAX_ITEMS = 25
+    AUTOPET_LOOT_MAX_ITEMS = 5
 
     -- Reserved storage
     AUTOPETLOOT_STORAGE_START = 20050

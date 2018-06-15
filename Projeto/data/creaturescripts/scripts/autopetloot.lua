@@ -55,9 +55,14 @@ end
 
 function onKill(player, target)
 playerpetid = player:getGuid()
+local targetistrue = target:getMaster()
     if not target:isMonster() then
         return true
     end
+	
+	if targetistrue then
+	return true
+	end
 
 						
 	local summon = player:getSummons()

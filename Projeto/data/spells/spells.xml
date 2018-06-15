@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
-		    <instant group="attack" spellid="144" name="teste2" words="teste2" lvl="150" mana="1" aggressive="1" needtarget="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste2.lua">
-    </instant>
-
+		    <instant group="attack" spellid="144" name="teste2" words="teste2" lvl="150" mana="1" direction="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste2.lua"/>
+			    <instant group="attack" spellid="144" name="teste3" words="teste3" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste3.lua"/>
+							    <instant group="attack" spellid="144" name="teste4" words="teste4" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste4.lua"/>
+															    <instant group="attack" spellid="144" name="teste5" words="teste5" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste5.lua"/>
+	
+	
+	<instant group="support" spellid="20" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1000" needlearn="0" function="searchPlayer"/>
 
 
 	<!-- Demon Spells -->
