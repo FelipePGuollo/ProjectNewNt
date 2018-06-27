@@ -1,46 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
-		    <instant group="attack" spellid="144" name="teste2" words="teste2" lvl="150" mana="1" direction="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste2.lua"/>
-			    <instant group="attack" spellid="144" name="teste3" words="teste3" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste3.lua"/>
-							    <instant group="attack" spellid="144" name="teste4" words="teste4" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste4.lua"/>
-															    <instant group="attack" spellid="144" name="teste5" words="teste5" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="news/teste5.lua"/>
+	<instant group="attack" spellid="144" name="teste2" words="teste2" lvl="150" mana="1" direction="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste2.lua"/>
+	<instant group="attack" spellid="144" name="teste3" words="teste3" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste3.lua"/>
+	<instant group="attack" spellid="144" name="teste5" words="teste5" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste5.lua"/>
 	
 	
 	<instant group="support" spellid="20" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1000" needlearn="0" function="searchPlayer"/>
 
 
 	<!-- Demon Spells -->
-			<instant group="attack" spellid="89" name="flame Strike" words="flame strike" lvl="25" mana="20" prem="1" range="7" casterTargetOrDirection="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="attack/purgatory strike.lua">
+	<instant group="attack" spellid="1" name="Dark Geiser" words="dark geiser" lvl="150" mana="1" direction="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/dark geiser.lua">
 					<vocation name="Demon" />
 	</instant>
-				<instant group="attack" spellid="89" name="Blackout" words="blackout" lvl="75" mana="400" prem="1"  direction="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="news/blackout.lua">
+			<instant group="attack" spellid="2" name="flame Strike" words="flame strike" lvl="25" mana="20" prem="1" range="7" casterTargetOrDirection="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="attack/purgatory strike.lua">
 					<vocation name="Demon" />
 	</instant>
-			<instant group="attack" spellid="89" name="dark punch" words="dark punch" lvl="10" mana="20" prem="1" range="1" needtarget="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="news/dark punch.lua">
+			<instant group="attack" spellid="3" name="souls reaper" words="souls reaper" lvl="25" mana="20" prem="1" range="7" needtarget="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="demon/souls reaper.lua">
 					<vocation name="Demon" />
 	</instant>
-		    <instant group="attack" spellid="144" name="dark snow" words="dark snow" lvl="150" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="news/teste.lua">
+			<instant group="attack" spellid="4" name="Blackout" words="blackout" lvl="75" mana="400" prem="1"  direction="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="demon/blackout.lua">
+					<vocation name="Demon" />
+	</instant>
+			<instant group="attack" spellid="5" name="dark punch" words="dark punch" lvl="10" mana="20" prem="1" range="1" needtarget="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="demon/dark punch.lua">
+					<vocation name="Demon" />
+	</instant>
+		    <instant group="attack" spellid="6" name="dark snow" words="dark snow" lvl="150" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="demon/teste.lua">
 					<vocation name="Demon" />
     </instant>
-			<instant group="support" spellid="144" name="dark protection" words="dark protection" lvl="100" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="news/demon defense.lua">
+			<instant group="support" spellid="7" name="dark protection" words="dark protection" lvl="100" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="demon/demon defense.lua">
 					<vocation name="Demon" />
     </instant>
-			<instant group="attack" spellid="144" name="dark nebula" words="dark nebula" lvl="1" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="news/dark nebula.lua">
+			<instant group="attack" spellid="8" name="dark nebula" words="dark nebula" lvl="1" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="demon/dark nebula.lua">
 					<vocation name="Demon" />
     </instant>
-			<instant group="attack" spellid="138" name="Purgatory Ignite" words="Purgatory Ignite" lvl="75" mana="30" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="60000" groupcooldown="2000" needlearn="0" script="news/purgatory ignite.lua">
+				<instant group="attack" spellid="9" name="meteor conflagration" words="meteor conflagration" lvl="1" mana="1" aggressive="1" selftarget="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="demon/meteor conflagration.lua">
+					<vocation name="Demon" />
+    </instant>
+			<instant group="attack" spellid="10" name="Purgatory Ignite" words="Purgatory Ignite" lvl="75" mana="30" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="60000" groupcooldown="2000" needlearn="0" script="demon/purgatory ignite.lua">
 					<vocation name="Demon" />
 	</instant>
 			<instant group="healing" spellid="2" name="heal test" words="heal test" lvl="20" mana="70" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1000" needlearn="0" script="healing/heal test.lua">
-		<vocation name="Demon" />
+					<vocation name="Demon" />
 	</instant>
-			<instant group="healing" spellid="2" name="Flames Healing" words="flame heal" lvl="20" mana="70" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1000" needlearn="0" script="healing/flame heal.lua">
-		<vocation name="Demon" />
+			<instant group="healing" spellid="11" name="Flames Healing" words="flame heal" lvl="20" mana="70" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1000" needlearn="0" script="healing/flame heal.lua">
+					<vocation name="Demon" />
 	</instant>
-			<instant group="support" spellid="133" name="Dark Rage" words="Dark Rage" lvl="20" mana="450" prem="1" aggressive="0" selftarget="1" cooldown="15000" groupcooldown="2000" needlearn="0" script="support/dark rage.lua">
+			<instant group="support" spellid="12" name="Dark Rage" words="Dark Rage" lvl="20" mana="450" prem="1" aggressive="0" selftarget="1" cooldown="15000" groupcooldown="2000" needlearn="0" script="support/dark rage.lua">
+					<vocation name="Demon" />
 	</instant>
 	<!-- Deuses Spells -->
-
+			<instant group="attack" spellid="2" name="Divine Strike" words="divine strike" lvl="25" mana="20" prem="1" range="7" casterTargetOrDirection="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="godess/divine strike.lua">
+					<vocation name="Goddess" />
+	</instant>
+					<instant group="attack" spellid="9" name="divine swords" words="divine swords" lvl="1" mana="1" aggressive="1" playernameparam="1" params="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="godess/divine swords.lua">
+					<vocation name="Goddess" />
+    </instant>
+		<instant group="healing" spellid="84" name="Heal Friend" words="exura sio" lvl="18" mana="140" prem="1" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1000" needlearn="0" script="healing/heal friend.lua"/>
 	<!-- Fadas Spells -->
 
 	<!-- Gigantes Spells -->

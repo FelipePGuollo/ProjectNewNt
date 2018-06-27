@@ -1,5 +1,4 @@
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, 176)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
 local skill = Condition(CONDITION_ATTRIBUTES)
@@ -26,5 +25,8 @@ cooldownSupportGroup:setParameter(CONDITION_PARAM_SUBID, 3)
 combat:setCondition(cooldownSupportGroup)
 
 function onCastSpell(creature, variant)
+local position = creature:getPosition()
+position.x = position.x + 2
+position:sendMagicEffect(193)
 	return combat:execute(creature, variant)
 end

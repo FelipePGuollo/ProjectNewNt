@@ -13,9 +13,10 @@ local queryPet = db.storeQuery('SELECT * FROM `pet_loot` WHERE `player_id` = '..
 					player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, 'Whait: ' ..exhausted..' Minutes')
 		return
 	end
+	local new_container = player:getInbox():addItem(26377, 1, false, INDEX_WHEREEVER, FLAG_NOLIMIT)
 	repeat
+		local i = 0
 		local pet_id, petitem_id, petitem_count = result.getNumber(queryPet, 'id'),result.getNumber(queryPet, 'pet_itemid'), result.getDataInt(queryPet, 'pet_count')
-		local i, new_container = 0, player:getInbox():addItem(26377, 1, false, INDEX_WHEREEVER, FLAG_NOLIMIT)
 		local addrest = 0
 		local finishedrest = 1
 		local x = 0
@@ -43,7 +44,6 @@ local queryPet = db.storeQuery('SELECT * FROM `pet_loot` WHERE `player_id` = '..
 							new_container:addItem(petitem_id, w, INDEX_WHEREEVER, FLAG_NOLIMIT)	
 							end
 					
-		--db.asyncQuery('UPDATE `pet_loot` SET `player_id`= player_id ,`pet_itemid`=0,`pet_count`=0 WHERE `player_id` = ' .. petmasterid .. ' and `id` = '.. pet_id .. ' LIMIT 1;')
 		db.asyncQuery('DELETE FROM `pet_loot` WHERE `player_id` = '..petmasterid..' and `id` = '..pet_id..' and `pet_itemid` = '..petitem_id..' LIMIT 1;')	
 		until not result.next(queryPet)
 		result.free(queryPet)

@@ -1,3 +1,5 @@
+pet_table={}
+
 local function scanContainer(cid, position)
     local player = Player(cid)
     if not player then
@@ -32,18 +34,22 @@ local function scanContainer(cid, position)
 					player:setBankBalance(player:getBankBalance() + countpetsave*1000)
 					end
 					if idpetsave ~= 2148 and idpetsave ~= 2152 and idpetsave ~= 2160 then
-					local queryPet = db.storeQuery("SELECT * FROM `pet_loot` WHERE `player_id` = '" .. playerpetid .. "' and pet_itemid = "..idpetsave.."")
-					local idpet = result.getNumber(queryPet, 'id')
 					containerItem:remove()
-					if queryPet ~= false then
-					repeat
-					position:sendMagicEffect(57, player)	
-	db.asyncQuery('UPDATE `pet_loot` SET `player_id`= player_id ,`pet_count`= `pet_count` + '..countpetsave..' WHERE `player_id` = ' .. playerpetid .. ' and `id` = '.. idpet .. ' LIMIT 1;')		
-					until not result.next(queryPet)
-					result.free(queryPet)
-					else
-					db.asyncQuery('INSERT INTO `pet_loot`(`player_id`, `pet_itemid`, `pet_count`) VALUES ('..playerpetid..','..idpetsave..','..countpetsave..')')
+					local index = 0
+					for i in pairs(pet_table) do
+					if pet_table[i].itemid == idpetsave and (pet_table[i].playerid == player_pettable) then
+					index = i
+					end
+					end
+					if index ~= 0 then
+					local newcount = pet_table[index].count + countpetsave
+										pet_table[index]={playerid = player_pettable, itemid=idpetsave, count=newcount}
+															position:sendMagicEffect(57, player)	
+										else			
+					local pet_tablecount = #pet_table+1
+					pet_table[pet_tablecount]={playerid = player_pettable, itemid=idpetsave, count=countpetsave}
 					position:sendMagicEffect(57, player)
+					end
 								end
                     end
 						end
@@ -51,10 +57,9 @@ local function scanContainer(cid, position)
             end
         end
     end
-end
 
 function onKill(player, target)
-playerpetid = player:getGuid()
+player_pettable = player:getGuid()
 local targetistrue = target:getMaster()
     if not target:isMonster() then
         return true
