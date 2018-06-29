@@ -223,3 +223,30 @@ end
     AUTOPETLOOT_STORAGE_START = 20050
     AUTOPETLOOT_STORAGE_END = AUTOPETLOOT_STORAGE_START + AUTOPET_LOOT_MAX_ITEMS
 -- AutoLoot config end
+
+
+function getDirectionTo(pos1, pos2)
+    local dir = NORTH
+    if(pos1.x > pos2.x) then
+        dir = WEST
+        if(pos1.y > pos2.y) then
+            dir = NORTHWEST
+        elseif(pos1.y < pos2.y) then
+            dir = SOUTHWEST
+        end
+    elseif(pos1.x < pos2.x) then
+        dir = EAST
+        if(pos1.y > pos2.y) then
+            dir = NORTHEAST
+        elseif(pos1.y < pos2.y) then
+            dir = SOUTHEAST
+        end
+    else
+        if(pos1.y > pos2.y) then
+            dir = NORTH
+        elseif(pos1.y < pos2.y) then
+            dir = SOUTH
+        end
+    end
+    return dir
+end

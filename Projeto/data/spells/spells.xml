@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
 	<instant group="attack" spellid="144" name="teste2" words="teste2" lvl="150" mana="1" direction="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste2.lua"/>
-	<instant group="attack" spellid="144" name="teste3" words="teste3" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste3.lua"/>
-	<instant group="attack" spellid="144" name="teste5" words="teste5" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste5.lua"/>
+	<!-- <instant group="attack" spellid="144" name="teste3" words="teste3" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste3.lua"/> -->
+	<!-- <instant group="attack" spellid="144" name="teste5" words="teste5" lvl="150" mana="1" aggressive="1" cooldown="200" groupcooldown="1000" needlearn="0" script="demon/teste5.lua"/> -->
 	
 	
 	<instant group="support" spellid="20" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1000" needlearn="0" function="searchPlayer"/>
@@ -50,6 +50,15 @@
 	</instant>
 	<!-- Deuses Spells -->
 			<instant group="attack" spellid="2" name="Divine Strike" words="divine strike" lvl="25" mana="20" prem="1" range="7" casterTargetOrDirection="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="godess/divine strike.lua">
+					<vocation name="Goddess" />
+	</instant>
+				<instant group="attack" spellid="2" name="Destabilized ark" words="destabilized ark" lvl="25" mana="20" prem="1" range="7" needtarget="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="godess/Destabilized ark.lua">
+					<vocation name="Goddess" />
+	</instant>
+					<instant group="attack" spellid="2" name="ark" words="ark" lvl="25" mana="20" prem="1" range="7" needtarget="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="godess/ark.lua">
+					<vocation name="Goddess" />
+	</instant>
+					<instant group="attack" spellid="2" name="omega ark" words="omega ark" lvl="25" mana="20" prem="1" range="7" needtarget="1" blockwalls="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="godess/omega ark.lua">
 					<vocation name="Goddess" />
 	</instant>
 					<instant group="attack" spellid="9" name="divine swords" words="divine swords" lvl="1" mana="1" aggressive="1" playernameparam="1" params="1" cooldown="20000" groupcooldown="1000" needlearn="0" script="godess/divine swords.lua">

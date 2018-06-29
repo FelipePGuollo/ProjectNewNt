@@ -60,7 +60,8 @@ local events = {
 	'RedHealIgn',
 	'AutoLoot',
 	'AutoPetLoot',
-	'Pet'
+	'Pet',
+	'DeathLoot'
 }
  
 local function onMovementRemoveProtection(cid, oldPosition, time)

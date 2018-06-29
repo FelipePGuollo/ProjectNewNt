@@ -11,14 +11,14 @@ function onHealthChange(creature, attacker, primaryDamage, primaryType, secondar
             return primaryDamage, primaryType, secondaryDamage, secondaryType
         end
 	
-	if creature:getVocation():getId() == 11 then
+	if creature:getVocation():getId() == 3 then
 	if tile and Tile(creature:getPosition()) and creature:getStorageValue(58344) >= os.time() then
 	local x = tonumber(primaryDamage/100)
 	local y = tonumber(x*30)
 	local z = tonumber(x*60)
 	creature:addMana(y, true)
 	return z,primaryType, secondaryDamage, secondaryType
-	elseif creature:getVocation():getId() == 11 then
+	elseif creature:getVocation():getId() == 3 then
 	local x = tonumber(primaryDamage/100)
 	local y = tonumber(x*10)
 	local z = tonumber(x*90)
